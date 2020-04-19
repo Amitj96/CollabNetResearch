@@ -1,0 +1,320 @@
+---
+title: "Author Metrics"
+author: "AMIT"
+date: "April 17, 2020"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Degree
+
+df= read.csv("C:/Users/amitd/Desktop/FA/MasterDegree.csv")
+dflth = subset(df,df$LowToHigh=="LTH")
+dfhtl = subset(df,df$HighToLow=="HTL")
+dfclp = subset(df,df$ConsistentlyLowPerf=="CLP")
+dfchp = subset(df,df$ConsistentlyHighPerf =="CHP")
+
+
+
+dfchp[,4:24]
+M <- as.matrix(dfchp[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 100, length.out = length(x)), type = "n",xlab = "Years", ylab = "Degree")
+
+lines(x, M[1, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[2, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[3, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[4, ], col = rgb(0.5,0,0,alpha = 1))
+```
+
+dfclp[,4:24]
+M <- as.matrix(dfclp[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 100, length.out = length(x)), type = "n",xlab = "Years", ylab = "Degree")
+
+lines(x, M[1, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[2, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[3, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[4, ], col = rgb(0.5,0,0,alpha = 1))
+```
+
+dfhtl[,4:24]
+M <- as.matrix(dfhtl[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 65, length.out = length(x)), type = "n",xlab = "Years", ylab = "Degree")
+
+lines(x, M[6, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[3, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[4, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[5, ], col = rgb(0.5,0,0,alpha = 1))
+```
+
+
+
+dflth[,4:24]
+M <- as.matrix(dflth[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 200, length.out = length(x)), type = "n",xlab = "Years", ylab = "Degree")
+
+lines(x, M[2, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[3, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[4, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[5, ], col = rgb(0.5,0,0,alpha = 1))
+```
+
+
+##Betweenness
+
+dfbt= read.csv("C:/Users/amitd/Desktop/FA/MasterBetweenness.csv")
+dflthbt = subset(dfbt,dfbt$LowToHigh=="LTH")
+dfhtlbt = subset(dfbt,dfbt$HighToLow=="HTL")
+dfclpbt = subset(dfbt,dfbt$ConsistentlyLowPerf=="CLP")
+dfchpbt = subset(dfbt,dfbt$ConsistentlyHighPerf =="CHP")
+
+dfchpbt[,4:24]
+M <- as.matrix(dfchpbt[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 1000000, length.out = length(x)), type = "n",xlab = "Years", ylab = "Betweenness")
+
+lines(x, M[1, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[2, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[3, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[4, ], col = rgb(0.5,0,0,alpha = 1))
+```
+
+
+dfclpbt[,4:24]
+M <- as.matrix(dfclpbt[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 1000000, length.out = length(x)), type = "n",xlab = "Years", ylab = "Betweenness")
+
+lines(x, M[9, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[8, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[6, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[5, ], col = rgb(0.5,0,0,alpha = 1))
+```
+
+
+dfhtlbt[,4:24]
+M <- as.matrix(dfhtlbt[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 1000000, length.out = length(x)), type = "n",xlab = "Years", ylab = "Betweenness")
+
+lines(x, M[9, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[10, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[11, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[12, ], col = rgb(0.5,0,0,alpha = 1))
+```
+dflthbt[,4:24]
+M <- as.matrix(dflthbt[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 1000000, length.out = length(x)), type = "n",xlab = "Years", ylab = "Betweenness")
+
+lines(x, M[2, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[3, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[4, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[5, ], col = rgb(0.5,0,0,alpha = 1))
+```
+
+
+##Eigen Value
+
+dfev= read.csv("C:/Users/amitd/Desktop/FA/MasterEigenVector.csv")
+dflthev = subset(dfev,dfev$LowToHigh=="LTH")
+dfhtlev = subset(dfev,dfev$HighToLow=="HTL")
+dfclpev = subset(dfev,dfev$ConsistentlyLowPerf=="CLP")
+dfchpev = subset(dfev,dfev$ConsistentlyHighPerf =="CHP")
+
+dfchpev[,4:24]
+M <- as.matrix(dfchpev[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+
+
+```{r echo=FALSE}
+
+plot(x, seq(from=-20, to = 10, length.out = length(x)), type = "n",xlab = "Years", ylab = "Log Eigen Value")
+
+lines(x, log10(M[1, ]), col = rgb(1,0,0,alpha = 1))
+lines(x, log10(M[2, ]), col = rgb(1,0,1,alpha = 1))
+lines(x, log10(M[3, ]), col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, log10(M[4, ]), col = rgb(0.5,0,0,alpha = 1))
+```
+
+dfclpev[,4:24]
+M <- as.matrix(dfclpev[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+
+```{r echo=FALSE}
+
+plot(x, seq(from=-20, to = 10, length.out = length(x)), type = "n",xlab = "Years", ylab = "Log Eigen Value")
+
+lines(x, log10(M[9, ]), col = rgb(1,0,0,alpha = 1))
+lines(x, log10(M[8, ]), col = rgb(1,0,1,alpha = 1))
+lines(x, log10(M[6, ]), col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, log10(M[5, ]), col = rgb(0.5,0,0,alpha = 1))
+```
+
+
+dfhtlev[,4:24]
+M <- as.matrix(dfhtlev[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+
+```{r echo=FALSE}
+
+plot(x, seq(from=-20, to = 10, length.out = length(x)), type = "n",xlab = "Years", ylab = "Log Eigen Value")
+
+lines(x, log10(M[9, ]), col = rgb(1,0,0,alpha = 1))
+lines(x, log10(M[10, ]), col = rgb(1,0,1,alpha = 1))
+lines(x, log10(M[11, ]), col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, log10(M[12, ]), col = rgb(0.5,0,0,alpha = 1))
+```
+
+dflthev[,4:24]
+M <- as.matrix(dflthev[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+
+
+```{r echo=FALSE}
+
+plot(x, seq(from=-20, to = 10, length.out = length(x)), type = "n",xlab = "Years", ylab = "Log Eigen Value")
+
+lines(x, log10(M[2, ]), col = rgb(1,0,0,alpha = 1))
+lines(x, log10(M[3, ]), col = rgb(1,0,1,alpha = 1))
+lines(x, log10(M[4, ]), col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, log10(M[5, ]), col = rgb(0.5,0,0,alpha = 1))
+```
+
+##Closeness
+
+dfcl= read.csv("C:/Users/amitd/Desktop/FA/MasterCloseness.csv")
+dflthcl = subset(dfcl,dfcl$LowToHigh=="LTH")
+dfhtlcl = subset(dfcl,dfcl$HighToLow=="HTL")
+dfclpcl = subset(dfcl,dfcl$ConsistentlyLowPerf=="CLP")
+dfchpcl = subset(dfcl,dfcl$ConsistentlyHighPerf =="CHP")
+
+dfchpcl[,4:24]
+M <- as.matrix(dfchpcl[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 0.0005, length.out = length(x)), type = "n",xlab = "Years", ylab = "Closeness")
+
+lines(x, M[2, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[3, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[4, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[1, ], col = rgb(0.5,0,0,alpha = 1))
+```
+
+dfclpcl[,4:24]
+M <- as.matrix(dfclpcl[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 0.0005, length.out = length(x)), type = "n",xlab = "Years", ylab = "Closeness")
+
+lines(x, jitter(M[9, ]), col = rgb(1,0,0,alpha = 1))
+lines(x, jitter(M[8, ]), col = rgb(1,0,1,alpha = 1))
+lines(x, jitter(M[6, ]), col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, jitter(M[5, ]), col = rgb(0.5,0,0,alpha = 1))
+```
+
+
+dfhtlcl[,4:24]
+M <- as.matrix(dfhtlcl[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 0.0005, length.out = length(x)), type = "n",xlab = "Years", ylab = "Closeness")
+
+lines(x, M[9, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[10, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[11, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[12, ], col = rgb(0.5,0,0,alpha = 1))
+```
+
+
+dflthcl[,4:24]
+M <- as.matrix(dflthcl[,4:24])
+M
+x <- c(1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017)
+length(x)
+dim(M)
+```{r echo=FALSE}
+
+plot(x, seq(from=0, to = 0.0005, length.out = length(x)), type = "n",xlab = "Years", ylab = "Closeness")
+
+lines(x, M[2, ], col = rgb(1,0,0,alpha = 1))
+lines(x, M[3, ], col = rgb(1,0,1,alpha = 1))
+lines(x, M[4, ], col = rgb(0.4,0.5,0.5,alpha = 1))
+lines(x, M[5, ], col = rgb(0.5,0,0,alpha = 1))
+```
+
